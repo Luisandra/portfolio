@@ -1,0 +1,20 @@
+<%- include("partials/header") %>
+<%- include("partials/navbar") %>
+
+<div class="container-fluid min-vh-100 d-flex align-items-center">
+    <div class="container">
+        <h1 class="display-4">Find a food place near you!</h1>
+        <p class="lead mt-3"><strong>Enter your location:</strong></p>
+        <form action="/searchresults" method="GET">
+            <input type="text" placeholder="Location" name="loc">
+            <br>
+            <input class="btn btn-primary mt-3" type="submit" value="Submit">
+        </form>
+        
+    </div>
+ </div>
+
+
+
+        
+<%- include("partials/footer") %>

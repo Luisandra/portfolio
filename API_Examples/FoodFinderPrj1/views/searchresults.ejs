@@ -1,0 +1,54 @@
+<%- include("partials/header") %>
+<%- include("partials/navbar") %>
+
+
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <h1>Here are some great places nearby</h1>
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Name:</th>
+                    <th scope="col" colspan="2">Rating</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% data.forEach(place => { %>
+                    <% var rating = place["rating"] %>
+                    <% rating = Number(rating) %>
+                    <tr>
+                        <td><%= place["name"] %></td>
+                        <td><%= rating %></td>
+                        <td>
+                        <% if(rating == 0){ %>
+                                <img src="ratings/regular/stars_regular_0.png">
+                        <% } else if (rating == 1) { %>
+                                <img src="ratings/regular/stars_regular_1.png">
+                        <% } else if (rating == 1.5) { %>
+                                <h<img src="ratings/regular/stars_regular_1_half.png">
+                        <% } else if (rating == 2) { %>
+                                <img src="ratings/regular/stars_regular_2.png">
+                        <% } else if (rating == 2.5) { %>
+                                <h<img src="ratings/regular/stars_regular_2_half.png">
+                        <% } else if (rating == 3) { %>
+                                <img src="ratings/regular/stars_regular_3.png">
+                        <% } else if (rating == 3.5) { %>
+                                <h<img src="ratings/regular/stars_regular_3_half.png">
+                        <% } else if (rating == 4) { %>
+                                <img src="ratings/regular/stars_regular_4.png">
+                        <% } else if (rating == 4.5) { %>
+                                <img src="ratings/regular/stars_regular_4_half.png">
+                        <% } else if (rating == 5) { %>
+                            <img src="ratings/regular/stars_regular_5.png">
+                        <% } %>
+                        </td>
+                    </tr>
+            <% }) %>
+            </tbody>
+        </table>
+
+        <a href="/">Search Again?</a>
+    </div>
+</div>
+<%- include("partials/footer") %>
